@@ -4,7 +4,7 @@
 
 ![ポートフォリオサイトのスクリーンショット](<ここにスクリーンショット画像のパスを挿入>)
 
-**デモサイトURL:** <https://<Your-GitHub-Username>.github.io/<Your-Repository-Name>/>
+**デモサイトURL:** <https://coffin299.github.io/coffin299page/>
 
 ---
 
@@ -47,11 +47,11 @@ AIコーダーおよび3DCGアーティストとしての自身のスキルセ�
 
 1.  このリポジトリをクローンまたはダウンロードします。
     ```bash
-    git clone https://github.com/<Your-GitHub-Username>/<Your-Repository-Name>.git
+    git clone https://github.com/coffin299/coffin299page.git
     ```
 2.  プロジェクトディレクトリに移動します。
     ```bash
-    cd <Your-Repository-Name>
+    cd coffin299page
     ```
 3.  `index.html` ファイルをブラウザで開きます。
 
