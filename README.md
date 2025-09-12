@@ -1,74 +1,74 @@
-# Personal Portfolio
+# My Portfolio - coffin299
 
-A clean, modern, and responsive portfolio website to showcase your work and skills.
+これは、`coffin299(ごみぃ)`のスキルと制作物を紹介するための個人ポートフォリオサイトです。
 
-## Features
+![ポートフォリオサイトのスクリーンショット](<ここにスクリーンショット画像のパスを挿入>)
 
-- Responsive design that works on all devices
-- Smooth scrolling navigation
-- Project showcase section
-- Contact form
-- Social media links
-- Modern UI with animations
-
-## How to Use
-
-1. Clone this repository or download the files
-2. Open `index.html` in your web browser
-3. Customize the content in `index.html` with your personal information
-4. Update the styling in `styles.css` to match your preferences
-
-## Customization
-
-### Changing Colors
-
-You can easily change the color scheme by modifying the CSS variables in the `:root` selector in `styles.css`:
-
-```css
-:root {
-    --primary-color: #3a86ff;
-    --secondary-color: #8338ec;
-    --dark-color: #212529;
-    --light-color: #f8f9fa;
-    --text-color: #333;
-}
-```
-
-### Adding Projects
-
-To add a new project, copy and paste a project card in the projects section and update the content:
-
-```html
-<div class="project-card">
-    <h3>Project Title</h3>
-    <p>Project description goes here.</p>
-    <a href="#" class="project-link">View Project</a>
-</div>
-```
-
-### Updating Social Links
-
-Update the social media links in the contact section with your own profiles:
-
-```html
-<div class="social-links">
-    <a href="YOUR_GITHUB_URL" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="YOUR_LINKEDIN_URL" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="YOUR_TWITTER_URL" target="_blank"><i class="fab fa-twitter"></i></a>
-</div>
-```
-
-## Technologies Used
-
-- HTML5
-- CSS3 (with CSS Variables)
-- Font Awesome Icons
-- Google Fonts
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+**デモサイトURL:** <https://<Your-GitHub-Username>.github.io/<Your-Repository-Name>/>
 
 ---
 
-Created with ❤️ by [Your Name]
+## コンセプト
+
+AIコーダーおよび3DCGアーティストとしての自身のスキルセットと、これまでに制作したプロジェクトを分かりやすく紹介することを目的としています。モダンでインタラクティブなデザインを意識し、訪問者に興味を持ってもらえるようなサイトを目指しました。
+
+---
+
+## ✨ 特徴
+
+*   **レスポンシブデザイン**: PC、タブレット、スマートフォンなど、あらゆるデバイスで最適に表示されます。
+*   **背景動画**: ヒーローセクションには背景動画と、すりガラス風のぼかし（`backdrop-filter`）エフェクトを実装し、視覚的なインパクトを与えます。
+*   **インタラクティブなUI**: モバイル表示時のハンバーガーメニューや、スクロールに応じたフェードインアニメーションを実装し、快適なユーザー体験を提供します。
+*   **セクション構成**: 「About Me」「Skills」「Projects」「Contact」の各セクションで、情報を整理して紹介しています。
+
+---
+
+## 🛠️ 使用技術
+
+このポートフォリオは、以下の技術を使用して構築されています。
+
+*   **HTML5**: サイトの基本的な構造を定義しています。
+*   **CSS3**:
+    *   モダンなレイアウト（Flexbox, Grid Layout）
+    *   CSS変数（Custom Properties）による効率的なスタイル管理
+    *   アニメーション（`@keyframes`）
+    *   背景ぼかし（`backdrop-filter`）
+*   **JavaScript (ES6+)**:
+    *   ハンバーガーメニューの開閉機能
+    *   スクロール連動のアニメーション（Intersection Observer API）
+*   **Font Awesome**: 各種アイコンの表示に使用しています。
+*   **GitHub Pages**: ホスティングとデプロイに使用しています。
+
+---
+
+## 🚀 セットアップとデプロイ
+
+### ローカル環境での確認方法
+
+1.  このリポジトリをクローンまたはダウンロードします。
+    ```bash
+    git clone https://github.com/<Your-GitHub-Username>/<Your-Repository-Name>.git
+    ```
+2.  プロジェクトディレクトリに移動します。
+    ```bash
+    cd <Your-Repository-Name>
+    ```
+3.  `index.html` ファイルをブラウザで開きます。
+
+### デプロイ
+
+このサイトはGitHub Pagesを利用して公開されています。`main`ブランチにプッシュすると、自動的にサイトが更新されます。
+
+---
+
+## ✒️ 今後の展望
+
+*   各プロジェクトの詳細ページを追加
+*   3DCG作品を閲覧できるギャラリー機能の実装
+*   コンタクトフォームのバックエンド連携強化（Formspreeなど）
+
+---
+
+## ©️ ライセンス
+
+このプロジェクトは [MIT License](LICENSE) のもとで公開されています。
