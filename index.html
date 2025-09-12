@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="#home">Portfolio</a></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <!-- 背景動画 -->
+        <video autoplay muted loop playsinline id="bg-video">
+            <!-- ご自身の動画ファイルのパスに変更してください -->
+            <source src="photos\akitaken.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+        <!-- 動画の上のオーバーレイ -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">coffin299(ごみぃ)</span></h1>
+            <p class="tagline">noob AI coder & noob 3DCG artist</p>
+            <a href="#projects" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="reveal">About Me</h2>
+        <div class="about-content">
+            <div class="about-image reveal">
+                <img src="photos\coffin299.gif" alt="My Profile Picture">
+            </div>
+            <div class="about-text reveal">
+                <p>日々のゲーム体験と日常から生まれる「コレがあったらいいな」のアイデアをLLMを駆使して形にするのが得意です。</p>
+                <div class="skills">
+                    <h3>Skills</h3>
+                    <ul class="skills-list">
+                        <li>Java</li>
+                        <li>C#</li>
+                        <li>Python</li>
+                        <li>Javascript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>MMD</li>
+                        <li>Unity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="reveal">My Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card reveal">
+                <div class="project-content">
+                    <h3>PLANA</h3>
+                    <p>Discord上におけるLLMとの対話システム。</p>
+                    <a href="github.com/coffin399/llmcord-JP-plana" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card reveal">
+                <div class="project-content">
+                    <h3>ARONA</h3>
+                    <p>Discord上における簡易的な音楽再生システム。</p>
+                    <a href="https://github.com/coffin399/music-bot-arona" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card reveal">
+                <div class="project-content">
+                    <h3>MedicationManagement</h3>
+                    <p>Discord上における、誰でも簡単に操作できる服薬管理システム。</p>
+                    <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="reveal">Get In Touch</h2>
+        <div class="contact-content reveal">
+            <div class="social-links">
+                <a href="https://github.com/coffin399" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/coffin299" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 coffin299. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
