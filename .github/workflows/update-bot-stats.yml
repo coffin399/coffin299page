@@ -1,0 +1,39 @@
+# .github/workflows/update-bot-stats.yml
+name: Update Bot Stats Badge
+
+on:
+  schedule:
+    # 半日ごと (0時と12時 UTC)
+    - cron: '0 0,12 * * *'
+  workflow_dispatch: # 手動実行も可能に
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install discord.py pillow requests
+
+      - name: Generate badge
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        run: python scripts/generate_badge.py
+
+      - name: Commit and push badge
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add assets/badge.png
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update bot stats badge [skip ci]" && git push)
