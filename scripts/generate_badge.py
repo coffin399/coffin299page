@@ -24,9 +24,9 @@ async def get_guild_count():
 
 def generate_badge(server_count):
     """Shields.io APIを使用してバッジ画像を生成"""
-    label = "servers"
+    label = "PLANA in servers"
     message = str(server_count)
-    color = "blue"
+    color = "purple"
     
     # Shields.io の静的バッジAPIを使用
     url = f"https://img.shields.io/badge/{label}-{message}-{color}"
@@ -40,7 +40,7 @@ def generate_badge(server_count):
         os.makedirs(assets_dir, exist_ok=True)
         
         # バッジを保存
-        badge_path = os.path.join(assets_dir, 'badge.png')
+        badge_path = os.path.join(assets_dir, 'badge.svg')
         with open(badge_path, 'wb') as f:
             f.write(response.content)
         print(f"✓ Badge generated successfully: {server_count} servers")
