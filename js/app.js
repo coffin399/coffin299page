@@ -178,8 +178,8 @@ class VisitorCounterManager {
             const windowHeight = window.innerHeight;
             const documentHeight = document.documentElement.scrollHeight;
             
-            // Show counter when scrolled down 30% of the page or after 200px
-            const threshold = Math.max(documentHeight * 0.3, 200);
+            // Show counter when scrolled down 20% of the page or after 100px
+            const threshold = Math.max(documentHeight * 0.2, 100);
             
             if (scrollY > threshold && !this.isVisible) {
                 this.showCounter();
@@ -191,7 +191,7 @@ class VisitorCounterManager {
         // 初期チェック - ページが既にスクロールされている場合
         const scrollY = window.scrollY;
         const documentHeight = document.documentElement.scrollHeight;
-        const threshold = Math.max(documentHeight * 0.3, 200);
+        const threshold = Math.max(documentHeight * 0.2, 100);
         
         if (scrollY > threshold) {
             this.showCounter();
@@ -199,13 +199,19 @@ class VisitorCounterManager {
     }
 
     showCounter() {
-        this.counter.classList.add('visible');
-        this.isVisible = true;
+        if (this.counter) {
+            this.counter.classList.add('visible');
+            this.isVisible = true;
+            console.log('Visitor counter shown');
+        }
     }
 
     hideCounter() {
-        this.counter.classList.remove('visible');
-        this.isVisible = false;
+        if (this.counter) {
+            this.counter.classList.remove('visible');
+            this.isVisible = false;
+            console.log('Visitor counter hidden');
+        }
     }
 }
 
