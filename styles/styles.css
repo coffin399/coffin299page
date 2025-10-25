@@ -118,6 +118,38 @@ body {
     padding: 2rem;
 }
 
+/* Scroll content for visitor counter */
+.scroll-content {
+    min-height: 200vh;
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.content-spacer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-secondary);
+    text-align: center;
+    gap: 1rem;
+}
+
+.content-spacer h2 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.content-spacer p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
 
 .hero-content {
     max-width: 1200px;
@@ -308,61 +340,42 @@ body {
     background: var(--accent-secondary);
 }
 
-/* Moe counter styles for contact page */
-.moe-counter {
+/* Visitor counter styles */
+.visitor-counter {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
+    pointer-events: none;
+}
+
+.visitor-counter.visible {
     opacity: 1;
-    transform: translateY(0);
-    transition: all 0.3s ease;
+    transform: translate(-50%, -50%) scale(1.2);
+    pointer-events: auto;
 }
 
-.counter-container {
-    background: var(--bg-secondary);
-    border: 2px solid var(--accent-primary);
-    border-radius: 20px;
-    padding: 20px 25px;
-    box-shadow: 0 8px 32px var(--shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    backdrop-filter: blur(15px);
-    min-width: 200px;
-    animation: pulse 2s infinite;
-}
-
-.counter-label {
-    font-size: 1rem;
-    color: var(--text-primary);
-    margin: 0;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.counter-image {
-    max-width: 120px;
+.visitor-counter .counter-image {
+    max-width: 300px;
     height: auto;
-    border-radius: 8px;
+    border-radius: 15px;
     transition: var(--transition);
-    filter: drop-shadow(0 4px 8px var(--shadow));
+    filter: drop-shadow(0 8px 24px var(--shadow));
+    animation: glow 3s ease-in-out infinite alternate;
 }
 
-.counter-image:hover {
+.visitor-counter .counter-image:hover {
     transform: scale(1.1);
 }
 
-@keyframes pulse {
+@keyframes glow {
     0% {
-        box-shadow: 0 8px 32px var(--shadow);
-    }
-    50% {
-        box-shadow: 0 8px 32px var(--shadow), 0 0 20px var(--accent-primary);
+        filter: drop-shadow(0 8px 24px var(--shadow));
     }
     100% {
-        box-shadow: 0 8px 32px var(--shadow);
+        filter: drop-shadow(0 8px 24px var(--shadow)) drop-shadow(0 0 20px var(--accent-primary));
     }
 }

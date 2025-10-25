@@ -158,6 +158,57 @@ class AnimationManager {
     }
 }
 
+// Visitor counter manager
+class VisitorCounterManager {
+    constructor() {
+        this.counter = document.querySelector('.visitor-counter');
+        this.isVisible = false;
+        this.init();
+    }
+
+    init() {
+        if (this.counter) {
+            this.setupScrollListener();
+        }
+    }
+
+    setupScrollListener() {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Show counter when scrolled down 30% of the page or after 200px
+            const threshold = Math.max(documentHeight * 0.3, 200);
+            
+            if (scrollY > threshold && !this.isVisible) {
+                this.showCounter();
+            } else if (scrollY <= threshold && this.isVisible) {
+                this.hideCounter();
+            }
+        });
+        
+        // 初期チェック - ページが既にスクロールされている場合
+        const scrollY = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight;
+        const threshold = Math.max(documentHeight * 0.3, 200);
+        
+        if (scrollY > threshold) {
+            this.showCounter();
+        }
+    }
+
+    showCounter() {
+        this.counter.classList.add('visible');
+        this.isVisible = true;
+    }
+
+    hideCounter() {
+        this.counter.classList.remove('visible');
+        this.isVisible = false;
+    }
+}
+
 
 // Main application class
 class PortfolioApp {
@@ -165,6 +216,7 @@ class PortfolioApp {
         this.themeManager = new ThemeManager();
         this.navigationManager = new NavigationManager();
         this.animationManager = new AnimationManager();
+        this.visitorCounterManager = new VisitorCounterManager();
         
         this.init();
     }
