@@ -32,6 +32,13 @@ class ThemeManager {
         this.setupEventListeners();
         this.setupSystemThemeListener();
         this.setupStorageListener();
+        
+        // デバッグ用ログ
+        console.log('ThemeManager initialized', {
+            toggle: !!this.themeToggle,
+            icon: !!this.themeIcon,
+            theme: this.currentTheme
+        });
     }
 
     setupSystemThemeListener() {
@@ -169,6 +176,9 @@ class VisitorCounterManager {
     init() {
         if (this.counter) {
             this.setupScrollListener();
+            console.log('VisitorCounterManager initialized');
+        } else {
+            console.warn('Visitor counter element not found');
         }
     }
 
@@ -276,12 +286,36 @@ class PortfolioApp {
 // Initialize the application
 let app;
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    app = new PortfolioApp();
-});
-
-// Also initialize immediately if DOM is already loaded
-if (document.readyState !== 'loading') {
-    app = new PortfolioApp();
+// Function to initialize app
+function initializeApp() {
+    if (!app) {
+        try {
+            app = new PortfolioApp();
+            console.log('PortfolioApp initialized successfully');
+        } catch (error) {
+            console.error('Error initializing PortfolioApp:', error);
+        }
+    }
 }
+
+// Multiple initialization strategies for GitHub Pages compatibility
+function initApp() {
+    // Strategy 1: DOMContentLoaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    } else {
+        // Strategy 2: Immediate initialization
+        initializeApp();
+    }
+    
+    // Strategy 3: Fallback with timeout
+    setTimeout(() => {
+        if (!app) {
+            console.log('Fallback initialization triggered');
+            initializeApp();
+        }
+    }, 1000);
+}
+
+// Start initialization
+initApp();
