@@ -25,7 +25,10 @@ class ThemeManager {
         this.themeToggle = document.getElementById('theme-toggle');
         this.themeIcon = document.getElementById('theme-icon');
         
+        // テーマを設定
         this.setTheme(this.currentTheme);
+        
+        // イベントリスナーを設定
         this.setupEventListeners();
         this.setupSystemThemeListener();
         this.setupStorageListener();
@@ -155,56 +158,6 @@ class AnimationManager {
     }
 }
 
-// Scroll counter manager
-class ScrollCounterManager {
-    constructor() {
-        this.counter = document.querySelector('.scroll-counter');
-        this.isVisible = false;
-        this.init();
-    }
-
-    init() {
-        if (this.counter) {
-            this.setupScrollListener();
-        }
-    }
-
-    setupScrollListener() {
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-            
-            // Show counter when scrolled down 30% of the page or after 200px
-            const threshold = Math.max(documentHeight * 0.3, 200);
-            
-            if (scrollY > threshold && !this.isVisible) {
-                this.showCounter();
-            } else if (scrollY <= threshold && this.isVisible) {
-                this.hideCounter();
-            }
-        });
-        
-        // 初期チェック - ページが既にスクロールされている場合
-        const scrollY = window.scrollY;
-        const documentHeight = document.documentElement.scrollHeight;
-        const threshold = Math.max(documentHeight * 0.3, 200);
-        
-        if (scrollY > threshold) {
-            this.showCounter();
-        }
-    }
-
-    showCounter() {
-        this.counter.classList.add('visible');
-        this.isVisible = true;
-    }
-
-    hideCounter() {
-        this.counter.classList.remove('visible');
-        this.isVisible = false;
-    }
-}
 
 // Main application class
 class PortfolioApp {
@@ -212,7 +165,6 @@ class PortfolioApp {
         this.themeManager = new ThemeManager();
         this.navigationManager = new NavigationManager();
         this.animationManager = new AnimationManager();
-        this.scrollCounterManager = new ScrollCounterManager();
         
         this.init();
     }
@@ -263,14 +215,15 @@ class PortfolioApp {
     }
 }
 
-// Initialize the application when DOM is ready
+// Initialize the application
+let app;
+
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    const app = new PortfolioApp();
+    app = new PortfolioApp();
 });
 
 // Also initialize immediately if DOM is already loaded
-if (document.readyState === 'loading') {
-    // Wait for DOMContentLoaded
-} else {
-    const app = new PortfolioApp();
+if (document.readyState !== 'loading') {
+    app = new PortfolioApp();
 }
