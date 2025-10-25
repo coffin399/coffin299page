@@ -198,6 +198,33 @@
     box-shadow: 0 10px 20px var(--shadow);
 }
 
+/* GitHub button specific styling */
+.project-link[href*="github.com"] {
+    background: linear-gradient(135deg, #24292e, #00bcd4);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-link[href*="github.com"]:hover {
+    background: linear-gradient(135deg, #1a1e22, #0097a7);
+    box-shadow: 0 10px 20px rgba(0, 188, 212, 0.3);
+}
+
+.project-link[href*="github.com"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.project-link[href*="github.com"]:hover::before {
+    left: 100%;
+}
+
 /* 3DCG Section */
 .cg-section {
     animation: fadeInUp 0.8s ease-out 0.4s both;
