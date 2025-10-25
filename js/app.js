@@ -150,62 +150,6 @@ class AnimationManager {
     }
 }
 
-// Main application class
-class PortfolioApp {
-    constructor() {
-        this.themeManager = new ThemeManager();
-        this.navigationManager = new NavigationManager();
-        this.animationManager = new AnimationManager();
-        
-        this.init();
-    }
-
-    init() {
-        // Wait for DOM to be fully loaded
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                this.animationManager.observeElements();
-            });
-        } else {
-            this.animationManager.observeElements();
-        }
-
-        // Add smooth scrolling for anchor links
-        this.setupSmoothScrolling();
-        
-        // Add keyboard navigation support
-        this.setupKeyboardNavigation();
-    }
-
-    setupSmoothScrolling() {
-        const links = document.querySelectorAll('a[href^="#"]');
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href')?.substring(1);
-                const targetElement = document.getElementById(targetId || '');
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    }
-
-    setupKeyboardNavigation() {
-        document.addEventListener('keydown', (e) => {
-            // Toggle theme with Ctrl/Cmd + T
-            if ((e.ctrlKey || e.metaKey) && e.key === 't') {
-                e.preventDefault();
-                this.themeManager.toggleTheme();
-            }
-        });
-    }
-}
-
 // Scroll counter manager
 class ScrollCounterManager {
     constructor() {
