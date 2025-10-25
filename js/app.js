@@ -206,5 +206,104 @@ class PortfolioApp {
     }
 }
 
+// Scroll counter manager
+class ScrollCounterManager {
+    constructor() {
+        this.counter = document.querySelector('.scroll-counter');
+        this.isVisible = false;
+        this.init();
+    }
+
+    init() {
+        if (this.counter) {
+            this.setupScrollListener();
+        }
+    }
+
+    setupScrollListener() {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Show counter when scrolled down 50% of the page
+            const threshold = documentHeight * 0.5;
+            
+            if (scrollY > threshold && !this.isVisible) {
+                this.showCounter();
+            } else if (scrollY <= threshold && this.isVisible) {
+                this.hideCounter();
+            }
+        });
+    }
+
+    showCounter() {
+        this.counter.classList.add('visible');
+        this.isVisible = true;
+    }
+
+    hideCounter() {
+        this.counter.classList.remove('visible');
+        this.isVisible = false;
+    }
+}
+
+// Main application class
+class PortfolioApp {
+    constructor() {
+        this.themeManager = new ThemeManager();
+        this.navigationManager = new NavigationManager();
+        this.animationManager = new AnimationManager();
+        this.scrollCounterManager = new ScrollCounterManager();
+        
+        this.init();
+    }
+
+    init() {
+        // Wait for DOM to be fully loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                this.animationManager.observeElements();
+            });
+        } else {
+            this.animationManager.observeElements();
+        }
+
+        // Add smooth scrolling for anchor links
+        this.setupSmoothScrolling();
+        
+        // Add keyboard navigation support
+        this.setupKeyboardNavigation();
+    }
+
+    setupSmoothScrolling() {
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href')?.substring(1);
+                const targetElement = document.getElementById(targetId || '');
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+
+    setupKeyboardNavigation() {
+        document.addEventListener('keydown', (e) => {
+            // Toggle theme with Ctrl/Cmd + T
+            if ((e.ctrlKey || e.metaKey) && e.key === 't') {
+                e.preventDefault();
+                this.themeManager.toggleTheme();
+            }
+        });
+    }
+}
+
 // Initialize the application
 const app = new PortfolioApp();

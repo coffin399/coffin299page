@@ -306,3 +306,52 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-secondary);
 }
+
+/* Scroll-triggered counter styles */
+.scroll-counter {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.scroll-counter.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.counter-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 12px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    backdrop-filter: blur(10px);
+}
+
+.counter-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+    font-weight: 500;
+}
+
+.counter-image {
+    max-width: 80px;
+    height: auto;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.counter-image:hover {
+    transform: scale(1.05);
+}
