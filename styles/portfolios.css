@@ -198,41 +198,64 @@
     box-shadow: 0 10px 20px var(--shadow);
 }
 
-/* GitHub button specific styling */
+/* GitHubボタン専用スタイル（紫色から水色のグラデーション） */
 .project-link[href*="github.com"] {
-    background: linear-gradient(135deg, #24292e, #00bcd4);
+    background: linear-gradient(135deg, #9333EA, #00bcd4);
     position: relative;
     overflow: hidden;
 }
 
 .project-link[href*="github.com"]:hover {
-    background: linear-gradient(135deg, #1a1e22, #0097a7);
-    box-shadow: 0 10px 20px rgba(0, 188, 212, 0.3);
+    background: linear-gradient(135deg, #7c2dcc, #0097a7);
+    box-shadow: 0 10px 20px rgba(147, 51, 234, 0.4);
+    transform: translateY(-2px);
 }
 
-.project-link[href*="github.com"]::before {
+.project-link[href*="github.com"]:hover::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(142, 36, 170, 0.3), transparent);
+    animation: shimmer 0.6s ease-in-out;
 }
 
-.project-link[href*="github.com"]:hover::before {
-    left: 100%;
+.project-link[href*="github.com"]:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(142, 36, 170, 0.15), rgba(156, 39, 176, 0.15));
+    pointer-events: none;
 }
 
-/* Website button specific styling */
-.project-link:not([href*="github.com"]):not([href="#"]) {
-    background: linear-gradient(135deg, #8e24aa, #00bcd4);
+/* Websiteボタン専用スタイル（濃い紫色から水色のグラデーション） */
+.project-link[href*="coffin399.github.io"],
+.project-link[href*="website"],
+.project-link[href*="demo"],
+.project-link[href*="nonexistent-website-404"] {
+    background: linear-gradient(135deg, #7C3AED, #00bcd4);
     position: relative;
     overflow: hidden;
 }
 
-.project-link:not([href*="github.com"]):not([href="#"])::before {
+.project-link[href*="coffin399.github.io"]:hover,
+.project-link[href*="website"]:hover,
+.project-link[href*="demo"]:hover,
+.project-link[href*="nonexistent-website-404"]:hover {
+    background: linear-gradient(135deg, #6d28d9, #0097a7);
+    box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+    transform: translateY(-2px);
+}
+
+.project-link[href*="coffin399.github.io"]:hover::before,
+.project-link[href*="website"]:hover::before,
+.project-link[href*="demo"]:hover::before,
+.project-link[href*="nonexistent-website-404"]:hover::before {
     content: '';
     position: absolute;
     top: 0;
@@ -240,10 +263,13 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+    animation: shimmer 0.6s ease-in-out;
 }
 
-.project-link:not([href*="github.com"]):not([href="#"])::after {
+.project-link[href*="coffin399.github.io"]:hover::after,
+.project-link[href*="website"]:hover::after,
+.project-link[href*="demo"]:hover::after,
+.project-link[href*="nonexistent-website-404"]:hover::after {
     content: '';
     position: absolute;
     top: 0;
@@ -251,21 +277,7 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg, rgba(142, 36, 170, 0.1), rgba(0, 188, 212, 0.1));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.project-link:not([href*="github.com"]):not([href="#"]):hover {
-    background: linear-gradient(135deg, #7b1fa2, #0097a7);
-    box-shadow: 0 10px 20px rgba(142, 36, 170, 0.3);
-}
-
-.project-link:not([href*="github.com"]):not([href="#"]):hover::before {
-    left: 100%;
-}
-
-.project-link:not([href*="github.com"]):not([href="#"]):hover::after {
-    opacity: 1;
+    pointer-events: none;
 }
 
 /* 3DCG Section */
@@ -479,6 +491,15 @@
     }
 }
 
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .portfolios-main {
@@ -575,4 +596,39 @@
     .tech-item span {
         font-size: 0.8rem;
     }
+}
+
+/* Ask DeepWikiボタン専用スタイル（薄紫色から水色のグラデーション） */
+.project-link[href*="deepwiki.com"] {
+    background: linear-gradient(135deg, #A78BFA, #00bcd4);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-link[href*="deepwiki.com"]:hover {
+    background: linear-gradient(135deg, #8b5cf6, #0097a7);
+    box-shadow: 0 10px 20px rgba(167, 139, 250, 0.4);
+    transform: translateY(-2px);
+}
+
+.project-link[href*="deepwiki.com"]:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.3), transparent);
+    animation: shimmer 0.6s ease-in-out;
+}
+
+.project-link[href*="deepwiki.com"]:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(139, 195, 74, 0.15));
+    pointer-events: none;
 }
