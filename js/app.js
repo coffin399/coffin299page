@@ -1,10 +1,11 @@
 // Theme management
 class ThemeManager {
     constructor() {
-        this.themeToggle = document.getElementById('theme-toggle');
-        this.themeIcon = document.getElementById('theme-icon');
+        this.themeToggle = null;
+        this.themeIcon = null;
         this.currentTheme = this.getInitialTheme();
         
+        // DOM要素の取得を遅延させる
         this.init();
     }
 
@@ -20,6 +21,10 @@ class ThemeManager {
     }
 
     init() {
+        // DOM要素を再取得
+        this.themeToggle = document.getElementById('theme-toggle');
+        this.themeIcon = document.getElementById('theme-icon');
+        
         this.setTheme(this.currentTheme);
         this.setupEventListeners();
         this.setupSystemThemeListener();
@@ -170,8 +175,8 @@ class ScrollCounterManager {
             const windowHeight = window.innerHeight;
             const documentHeight = document.documentElement.scrollHeight;
             
-            // Show counter when scrolled down 50% of the page
-            const threshold = documentHeight * 0.5;
+            // Show counter when scrolled down 30% of the page or after 200px
+            const threshold = Math.max(documentHeight * 0.3, 200);
             
             if (scrollY > threshold && !this.isVisible) {
                 this.showCounter();
@@ -179,6 +184,15 @@ class ScrollCounterManager {
                 this.hideCounter();
             }
         });
+        
+        // 初期チェック - ページが既にスクロールされている場合
+        const scrollY = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight;
+        const threshold = Math.max(documentHeight * 0.3, 200);
+        
+        if (scrollY > threshold) {
+            this.showCounter();
+        }
     }
 
     showCounter() {
@@ -249,5 +263,14 @@ class PortfolioApp {
     }
 }
 
-// Initialize the application
-const app = new PortfolioApp();
+// Initialize the application when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    const app = new PortfolioApp();
+});
+
+// Also initialize immediately if DOM is already loaded
+if (document.readyState === 'loading') {
+    // Wait for DOMContentLoaded
+} else {
+    const app = new PortfolioApp();
+}
