@@ -173,6 +173,9 @@
 
 .project-footer {
     margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .project-link {
