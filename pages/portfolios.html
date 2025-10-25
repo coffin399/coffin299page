@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolios - coffin299</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/portfolios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- ダークモード切り替えボタン -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
+
+    <!-- ナビゲーション -->
+    <nav class="nav-container">
+        <ul class="nav-links">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="portfolios.html" class="nav-link active">Portfolios</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main class="portfolios-main">
+        <div class="portfolios-container">
+            <!-- ヘッダーセクション -->
+            <section class="portfolios-header">
+                <h1 class="page-title">My Portfolios</h1>
+                <p class="page-subtitle">AI技術を活用したプロジェクトと3DCG作品を紹介します</p>
+            </section>
+
+            <!-- プロジェクトセクション -->
+            <section class="projects-section">
+                <h2 class="section-title">Discord Bot Projects</h2>
+                <div class="projects-grid">
+                    <!-- PLANA Project -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">PLANA</h3>
+                                <div class="project-tags">
+                                    <span class="tag">LLM</span>
+                                    <span class="tag">Discord Bot</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Discord上におけるLLMとの対話システム。その他音楽再生システムやユーティリティコマンド、レクリエーションなど多機能なボットです。
+                            </p>
+                            <div class="project-features">
+                                <h4>主な機能</h4>
+                                <ul>
+                                    <li>LLMとの自然な対話</li>
+                                    <li>音楽再生システム</li>
+                                    <li>ユーティリティコマンド</li>
+                                    <li>レクリエーション機能</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/coffin399/llmcord-JP-plana" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                            <a href="https://coffin399.github.io/llmcord-JP-plana/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fas fa-globe"></i>
+                                View on Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ARONA Project -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">ARONA</h3>
+                                <div class="project-tags">
+                                    <span class="tag">Music Bot</span>
+                                    <span class="tag">Discord</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Discord上における簡易的な音楽再生システム。シンプルで使いやすい音楽ボットです。
+                            </p>
+                            <div class="project-features">
+                                <h4>主な機能</h4>
+                                <ul>
+                                    <li>YouTube音楽再生</li>
+                                    <li>プレイリスト管理</li>
+                                    <li>音量調整</li>
+                                    <li>キュー管理</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/coffin399/music-bot-arona" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fas fa-globe"></i>
+                                View on Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- MedicationManagement Project -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">MedicationManagement</h3>
+                                <div class="project-tags">
+                                    <span class="tag">Health</span>
+                                    <span class="tag">Discord Bot</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Discord上における、誰でも簡単に操作できる服薬管理システム。健康管理をサポートします。
+                            </p>
+                            <div class="project-features">
+                                <h4>主な機能</h4>
+                                <ul>
+                                    <li>服薬スケジュール管理</li>
+                                    <li>リマインダー機能</li>
+                                    <li>服薬履歴記録</li>
+                                    <li>簡単操作インターフェース</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/coffin399/MedicationManagement" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fas fa-globe"></i>
+                                View on Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pokemon Legends Z-A Automation Tool Project -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Pokemon Legends Z-A Automation Tool</h3>
+                                <div class="project-tags">
+                                    <span class="tag">Automation</span>
+                                    <span class="tag">Nintendo Switch</span>
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Ubuntu</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Nintendo Switch用の自動化ツール。Pokemon Legends Z-Aでの効率的なゲームプレイをサポートします。Ubuntuに対応しています。
+                            </p>
+                            <div class="project-features">
+                                <h4>主な機能</h4>
+                                <ul>
+                                    <li>ZL+Aボタンの自動化</li>
+                                    <li>Bluetooth接続管理</li>
+                                    <li>マクロ実行システム</li>
+                                    <li>安全な使用ガイドライン</li>
+                                    <li>Ubuntu Linux対応</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/coffin399/pokemon_legends_z-a_automation_tool" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fas fa-globe"></i>
+                                View on Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Discord Bot Spam Blocker Project -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Discord Bot Spam Blocker</h3>
+                                <div class="project-tags">
+                                    <span class="tag">Security</span>
+                                    <span class="tag">Discord Bot</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Discordサーバーをスパムから保護するためのボット。自動検出とフィルタリング機能を提供します。
+                            </p>
+                            <div class="project-features">
+                                <h4>主な機能</h4>
+                                <ul>
+                                    <li>スパムメッセージの自動検出</li>
+                                    <li>ユーザー制限機能</li>
+                                    <li>カスタマイズ可能なフィルター</li>
+                                    <li>ログ記録システム</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/coffin399/discord-bot-spam-blocker" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fas fa-globe"></i>
+                                View on Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Discord Chat Viewer for OBS Project -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Discord Chat Viewer for OBS</h3>
+                                <div class="project-tags">
+                                    <span class="tag">OBS</span>
+                                    <span class="tag">Streaming</span>
+                                    <span class="tag">Discord</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                OBS Studio用のDiscordチャット表示ツール。ストリーミング時にDiscordチャットを画面に表示できます。
+                            </p>
+                            <div class="project-features">
+                                <h4>主な機能</h4>
+                                <ul>
+                                    <li>OBS Studio統合</li>
+                                    <li>リアルタイムチャット表示</li>
+                                    <li>カスタマイズ可能なデザイン</li>
+                                    <li>ストリーミング最適化</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/coffin399/Discord-Chat-Viewer-for-OBS" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fas fa-globe"></i>
+                                View on Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3DCG作品セクション -->
+            <section class="cg-section">
+                <h2 class="section-title">3DCG Works</h2>
+                    <div class="cg-grid">
+                        <a href="https://www.youtube.com/@coffin2999" target="_blank" rel="noopener noreferrer" class="cg-card-link">
+                            <div class="cg-card">
+                                <div class="cg-preview">
+                                    <video autoplay muted loop playsinline class="cg-image">
+                                        <source src="../photos/coffin299.gif" type="image/gif">
+                                        <source src="../photos/akitaken.mp4" type="video/mp4">
+                                        お使いのブラウザは動画タグをサポートしていません。
+                                    </video>
+                                    <div class="cg-overlay">
+                                        <div class="cg-info">
+                                            <h3>MMD作品</h3>
+                                            <p>MikuMikuDanceを使用した3DCGアニメーション作品</p>
+                                            <div class="youtube-link-hint">
+                                                <i class="fab fa-youtube"></i>
+                                                YouTubeで見る
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cg-details">
+                                    <h4>MMD Animation</h4>
+                                    <p>キャラクターアニメーションとエフェクトを組み合わせた作品</p>
+                                    <div class="cg-tags">
+                                        <span class="tag">MMD</span>
+                                        <span class="tag">Animation</span>
+                                        <span class="tag">3DCG</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            </section>
+
+            <!-- 技術スタックセクション -->
+            <section class="tech-stack-section">
+                <h2 class="section-title">Technology Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-category">
+                        <h3 class="tech-title">
+                            <i class="fas fa-code"></i>
+                            Programming Languages
+                        </h3>
+                        <div class="tech-items">
+                            <div class="tech-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-js-square"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-java"></i>
+                                <span>Java</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-code"></i>
+                                <span>C#</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3 class="tech-title">
+                            <i class="fas fa-tools"></i>
+                            Tools & Frameworks
+                        </h3>
+                        <div class="tech-items">
+                            <div class="tech-item">
+                                <i class="fab fa-discord"></i>
+                                <span>Discord.py</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-cube"></i>
+                                <span>Unity</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-paint-brush"></i>
+                                <span>MMD</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
