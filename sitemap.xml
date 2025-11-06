@@ -6,7 +6,7 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://coffin399.github.io/coffin299page/</loc>
+        <loc>https://coffin299.net/</loc>
         <lastmod>2025-11-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
     <!-- About Page -->
     <url>
-        <loc>https://coffin399.github.io/coffin299page/pages/about.html</loc>
+        <loc>https://coffin299.net/pages/about.html</loc>
         <lastmod>2025-11-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
     <!-- Portfolios Page -->
     <url>
-        <loc>https://coffin399.github.io/coffin299page/pages/portfolios.html</loc>
+        <loc>https://coffin299.net/pages/portfolios.html</loc>
         <lastmod>2025-11-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -30,7 +30,7 @@
 
     <!-- Contact Page -->
     <url>
-        <loc>https://coffin399.github.io/coffin299page/pages/contact.html</loc>
+        <loc>https://coffin299.net/pages/contact.html</loc>
         <lastmod>2025-11-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
